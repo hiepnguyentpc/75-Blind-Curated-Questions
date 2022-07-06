@@ -1,9 +1,24 @@
 def removeDuplicates(nums) -> int:
-    if len(nums) == 0:
-        return 0
-    i = 0
-    for j in range(1, len(nums)):
-        if nums[i] != nums[j]: #bypass all duplicated elements
-            i += 1 #increment i for the right next element assignment
-            nums[i] = nums[j]
-    return i + 1 #because i stops right before the last element of distinct numbers
+    i, count = 1, 1
+    while i < len(nums):
+        if nums[i] == nums[i-1]:
+            count += 1
+            if count > 2:
+                nums.pop(i)
+                i -= 1
+        else:
+            count = 1
+        i += 1
+    return len(nums)
+
+def removeDuplicates2(nums) -> int:
+    j, count = 1, 1
+    for i in range(1, len(nums)):
+        if nums[i] == nums[i-1]:
+            count += 1
+        else:
+            count = 1
+        if count <= 2:
+            nums[j] = nums[i]
+            j += 1
+    return j

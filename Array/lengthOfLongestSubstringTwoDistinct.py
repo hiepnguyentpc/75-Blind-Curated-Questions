@@ -1,0 +1,2 @@
+def lengthOfLongestSubstringTwoDistinct(s):
+    l = 
