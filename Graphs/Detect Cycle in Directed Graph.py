@@ -28,6 +28,7 @@ class Graph():
 			elif recStack[neighbour] == True:
 				return True
 
+
 		# The node needs to be popped from
 		# recursion stack before function ends
 		recStack[v] = False
@@ -50,9 +51,12 @@ g.addEdge(1, 2)
 g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
+print(g.graph)
+
 if g.isCyclic() == 1:
 	print("Graph has a cycle")
 else:
 	print("Graph has no cycle")
+
 
 # Thanks to Divyanshu Mehta for contributing this code
